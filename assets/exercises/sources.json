@@ -1,0 +1,216 @@
+{
+  "dbPress": {
+    "source_id": "Dumbbell_Bench_Press_with_Neutral_Grip",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Dumbbell_Bench_Press_with_Neutral_Grip",
+    "frames": [
+      "assets/exercises/dbPress-1.jpg",
+      "assets/exercises/dbPress-0.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "incline": {
+    "source_id": "Incline_Dumbbell_Bench_With_Palms_Facing_In",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Incline_Dumbbell_Bench_With_Palms_Facing_In",
+    "frames": [
+      "assets/exercises/incline-1.jpg",
+      "assets/exercises/incline-0.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "pushdown": {
+    "source_id": "Triceps_Pushdown_-_Rope_Attachment",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Triceps_Pushdown_-_Rope_Attachment",
+    "frames": [
+      "assets/exercises/pushdown-0.jpg",
+      "assets/exercises/pushdown-1.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "cableFly": {
+    "source_id": "Cable_Crossover",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Cable_Crossover",
+    "frames": [
+      "assets/exercises/cableFly-0.jpg",
+      "assets/exercises/cableFly-1.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "chestMachine": {
+    "source_id": "Leverage_Chest_Press",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Leverage_Chest_Press",
+    "frames": [
+      "assets/exercises/chestMachine-0.jpg",
+      "assets/exercises/chestMachine-1.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "inclineMachine": {
+    "source_id": "Leverage_Incline_Chest_Press",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Leverage_Incline_Chest_Press",
+    "frames": [
+      "assets/exercises/inclineMachine-0.jpg",
+      "assets/exercises/inclineMachine-1.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "pecDeck": {
+    "source_id": "Butterfly",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Butterfly",
+    "frames": [
+      "assets/exercises/pecDeck-1.jpg",
+      "assets/exercises/pecDeck-0.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "row": {
+    "source_id": "One-Arm_Dumbbell_Row",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/One-Arm_Dumbbell_Row",
+    "frames": [
+      "assets/exercises/row-0.jpg",
+      "assets/exercises/row-1.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "pulldown": {
+    "source_id": "V-Bar_Pulldown",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/V-Bar_Pulldown",
+    "frames": [
+      "assets/exercises/pulldown-1.jpg",
+      "assets/exercises/pulldown-0.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "seatedRow": {
+    "source_id": "Seated_Cable_Rows",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Seated_Cable_Rows",
+    "frames": [
+      "assets/exercises/seatedRow-0.jpg",
+      "assets/exercises/seatedRow-1.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "hammer": {
+    "source_id": "Hammer_Curls",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Hammer_Curls",
+    "frames": [
+      "assets/exercises/hammer-0.jpg",
+      "assets/exercises/hammer-1.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "machineRow": {
+    "source_id": "Leverage_Iso_Row",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Leverage_Iso_Row",
+    "frames": [
+      "assets/exercises/machineRow-0.jpg",
+      "assets/exercises/machineRow-1.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "reverseDeck": {
+    "source_id": "Reverse_Machine_Flyes",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Reverse_Machine_Flyes",
+    "frames": [
+      "assets/exercises/reverseDeck-0.jpg",
+      "assets/exercises/reverseDeck-1.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "machineCurl": {
+    "source_id": "Machine_Preacher_Curls",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Machine_Preacher_Curls",
+    "frames": [
+      "assets/exercises/machineCurl-0.jpg",
+      "assets/exercises/machineCurl-1.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "goblet": {
+    "source_id": "Goblet_Squat",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Goblet_Squat",
+    "frames": [
+      "assets/exercises/goblet-0.jpg",
+      "assets/exercises/goblet-1.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "rdl": {
+    "source_id": "Stiff-Legged_Dumbbell_Deadlift",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Stiff-Legged_Dumbbell_Deadlift",
+    "frames": [
+      "assets/exercises/rdl-0.jpg",
+      "assets/exercises/rdl-1.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "bridge": {
+    "source_id": "Butt_Lift_Bridge",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Butt_Lift_Bridge",
+    "frames": [
+      "assets/exercises/bridge-0.jpg",
+      "assets/exercises/bridge-1.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "deadbug": {
+    "source_id": "Dead_Bug",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Dead_Bug",
+    "frames": [
+      "assets/exercises/deadbug-0.jpg",
+      "assets/exercises/deadbug-1.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "legPress": {
+    "source_id": "Leg_Press",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Leg_Press",
+    "frames": [
+      "assets/exercises/legPress-1.jpg",
+      "assets/exercises/legPress-0.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "legCurl": {
+    "source_id": "Seated_Leg_Curl",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Seated_Leg_Curl",
+    "frames": [
+      "assets/exercises/legCurl-0.jpg",
+      "assets/exercises/legCurl-1.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "hipMachine": {
+    "source_id": "Thigh_Abductor",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Thigh_Abductor",
+    "frames": [
+      "assets/exercises/hipMachine-0.jpg",
+      "assets/exercises/hipMachine-1.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "lateral": {
+    "source_id": "Side_Lateral_Raise",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Side_Lateral_Raise",
+    "frames": [
+      "assets/exercises/lateral-0.jpg",
+      "assets/exercises/lateral-1.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "facePull": {
+    "source_id": "Face_Pull",
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Face_Pull",
+    "frames": [
+      "assets/exercises/facePull-0.jpg",
+      "assets/exercises/facePull-1.jpg"
+    ],
+    "frame_order": "Preparation, movement"
+  },
+  "lateralMachine": {
+    "source": "https://gymfitclub.ir/articles/showarticle/205",
+    "frames": [
+      "assets/exercises/lateralMachine-pair.webp"
+    ],
+    "frame_order": "Left: preparation; right: movement"
+  }
+}
