@@ -212,5 +212,19 @@
       "assets/exercises/lateralMachine-pair.webp"
     ],
     "frame_order": "Left: preparation; right: movement"
+  },
+  "calf": {
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Standing_Dumbbell_Calf_Raise",
+    "frames": [
+      "assets/exercises/calf-0.jpg",
+      "assets/exercises/calf-1.jpg"
+    ]
+  },
+  "calfMachine": {
+    "source": "https://github.com/yuhonas/free-exercise-db/tree/main/exercises/Standing_Calf_Raises",
+    "frames": [
+      "assets/exercises/calfMachine-0.jpg",
+      "assets/exercises/calfMachine-1.jpg"
+    ]
   }
 }

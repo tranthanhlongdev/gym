@@ -4,13 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f5f5f0">
-  <meta name="description" content="Lộ trình gym 5 buổi tối dành riêng cho bạn. Chọn tạ đơn, dây cáp hoặc máy, xem minh hoạ và theo dõi từng buổi tập.">
+  <meta name="description" content="Lộ trình 8 tuần tăng cơ, giảm mỡ: 5 buổi tạ cân bằng, phục hồi, tiến độ và thực đơn có gà luộc.">
   <title>Nhịp Tập — Lộ trình của bạn</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;450;500;550;600;650;700;750;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=36d0ae125d">
-  <script src="app.js?v=b717bd051c" defer></script>
+  <link rel="stylesheet" href="style.css?v=28ff404fbe">
+  <script src="program.js?v=3fd291d6e6" defer></script>
+  <script src="app.js?v=fc61f9e986" defer></script>
+  <script src="dashboard.js?v=236a8b494c" defer></script>
+  <script src="vendor/supabase-2.118.0.js" defer></script>
+  <script src="supabase-config.js?v=c318a5d2ab" defer></script>
+  <script src="sync-core.js?v=06aa14a370" defer></script>
+  <script src="cloud-sync.js?v=ff94336373" defer></script>
 </head>
 <body>
   <a href="#schedule" class="skip-link">Đến lịch tập</a>
@@ -20,30 +26,36 @@
     <nav aria-label="Điều hướng chính">
       <a href="#overview" class="nav-link active" data-nav="overview"><span data-icon="grid"></span>Tổng quan</a>
       <a href="#schedule" class="nav-link" data-nav="schedule"><span data-icon="calendar"></span>Lịch tập tuần</a>
+      <a class="nav-link" href="#nutrition"><span data-icon="weight"></span>Ăn uống</a>
       <button class="nav-link" id="guide-nav"><span data-icon="book"></span>Hướng dẫn tập</button>
       <button class="nav-link" id="progress-nav"><span data-icon="chart"></span>Tiến độ của tôi</button>
     </nav>
-    <div class="sidebar-week"><span class="tiny-label">HÀNH TRÌNH MỚI</span><h3>Đều đặn hơn mỗi ngày.</h3><p>Một buổi tập nhỏ hôm nay.<br>Một thay đổi lớn ngày mai.</p><div class="week-decoration" aria-hidden="true">↗</div><span class="week-chip">TUẦN 01</span></div>
+    <div class="sidebar-week"><span class="tiny-label">HÀNH TRÌNH MỚI</span><h3>Đều đặn hơn mỗi ngày.</h3><p>Một buổi tập nhỏ hôm nay.<br>Một thay đổi lớn ngày mai.</p><div class="week-decoration" aria-hidden="true">↗</div><span class="week-chip" id="sidebar-week">8 TUẦN · 26/10–20/12</span></div>
     <div class="sidebar-bottom"><span class="profile-avatar">B</span><div><strong>Góc tập của bạn</strong><span>Kế hoạch cá nhân</span></div><span class="profile-dot"></span></div>
   </aside>
   <main id="overview">
-    <header class="topbar"><div><span class="mobile-brand">nhịp tập<span>.</span></span><span class="breadcrumb">Không gian cá nhân <span>/</span> <strong>Lộ trình tập luyện</strong></span></div><span class="top-date"><span data-icon="calendar"></span>19 — 25 tháng 10, 2026</span></header>
+    <header class="topbar"><div><span class="mobile-brand">nhịp tập<span>.</span></span><span class="breadcrumb">Không gian cá nhân <span>/</span> <strong>Lộ trình tập luyện</strong></span></div><span class="top-date"><span data-icon="calendar"></span><span id="header-dates">26/10 – 20/12/2026</span></span></header>
     <div class="page-content">
-      <div class="page-heading"><div><span class="eyebrow">BẮT ĐẦU TỪ CHÍNH BẠN</span><h1>Tuần mới, nhịp tập mới<span>.</span></h1><p>Lộ trình vừa sức. Tập đúng kỹ thuật. Tiến bộ từng ngày.</p></div><button class="button secondary print-button" id="print-plan"><span data-icon="download"></span>In lịch tập</button></div>
-      <section class="hero" aria-label="Mục tiêu tuần đầu">
+      <div class="page-heading"><div><span class="eyebrow">BẮT ĐẦU TỪ CHÍNH BẠN</span><h1>8 tuần, một nhịp sống mới<span>.</span></h1><p>Tập có tiến triển. Ăn đủ đạm. Đánh giá bằng số đo và sức mạnh.</p></div><button class="button secondary print-button" id="print-plan"><span data-icon="download"></span>In lịch tập</button></div>
+      <section class="hero" aria-label="Mục tiêu 8 tuần">
         <img src="assets/gym.jpg" alt="Không gian phòng gym với ghế tập và các dãy tạ đơn" class="hero-image" fetchpriority="high">
-        <div class="hero-content"><span class="hero-pill"><span></span>TUẦN 01 · LÀM QUEN & XÂY NỀN TẢNG</span><h2>Khỏe hơn.<br>Từ những bước nhỏ.</h2><p>5 buổi tối dành cho bạn.<br>Ưu tiên kỹ thuật, thể lực và sự bền bỉ.</p><a class="button primary" href="#workout">Khám phá buổi tập <span data-icon="arrow"></span></a></div>
-        <div class="hero-aside"><span>KẾ HOẠCH CỦA BẠN</span><div><strong>05</strong><p>buổi tập tối</p></div><div><strong>02</strong><p>ngày phục hồi</p></div></div>
+        <div class="hero-content"><span class="hero-pill"><span></span>8 TUẦN · TĂNG CƠ & GIẢM MỠ</span><h2>Tập có mục tiêu.<br>Tiến bộ có số đo.</h2><p>5 tối tạ · 2 buổi chân, 2 ngày nghỉ.<br>Cùng thực đơn có gà luộc và kế hoạch tăng dần.</p><a class="button primary" href="#workout">Khám phá buổi tập <span data-icon="arrow"></span></a></div>
+        <div class="hero-aside"><span>KẾ HOẠCH CỦA BẠN</span><div><strong>05</strong><p>buổi tạ / tuần</p></div><div><strong>08</strong><p>tuần theo dõi</p></div></div>
         <span class="hero-caption">ĐỀU ĐẶN QUAN TRỌNG HƠN HOÀN HẢO</span>
       </section>
-      <section class="profile-strip" aria-label="Thể trạng và định hướng"><div class="profile-fact"><span class="fact-icon" data-icon="ruler"></span><div><span>Chiều cao</span><strong>178 <small>cm</small></strong></div></div><div class="profile-fact"><span class="fact-icon" data-icon="weight"></span><div><span>Cân nặng</span><strong>73 <small>kg</small></strong></div></div><div class="profile-fact"><span class="fact-icon" data-icon="target"></span><div><span>Mục tiêu</span><strong class="fact-text">Tăng cơ · Giảm mỡ</strong></div></div><div class="profile-fact"><span class="fact-icon orange" data-icon="shield"></span><div><span>Ưu tiên của tuần</span><strong class="fact-text">Vừa sức & bảo vệ cổ tay</strong></div></div></section>
-      <section id="schedule" class="schedule-section"><div class="section-title"><div><h2>Lịch tập của tuần</h2><p>Chọn một ngày để xem bài tập chi tiết.</p></div><span class="quiet-tag"><span class="dot"></span>19 — 25/10</span></div><div id="week-days" class="week-days" aria-label="Chọn ngày tập"></div></section>
+      <section class="profile-strip" aria-label="Thể trạng và định hướng"><div class="profile-fact"><span class="fact-icon" data-icon="ruler"></span><div><span>Chiều cao</span><strong>178 <small>cm</small></strong></div></div><div class="profile-fact"><span class="fact-icon" data-icon="weight"></span><div><span>Cân nặng</span><strong><span id="profile-weight">74</span> <small>kg</small></strong></div></div><div class="profile-fact"><span class="fact-icon" data-icon="target"></span><div><span>Mục tiêu</span><strong class="fact-text">Tăng cơ · Giảm mỡ</strong></div></div><div class="profile-fact"><span class="fact-icon orange" data-icon="shield"></span><div><span>Ưu tiên của tuần</span><strong class="fact-text">Vừa sức & bảo vệ cổ tay</strong></div></div></section>
+      <section id="sync-status" class="cloud-status" aria-live="polite"></section>
+      <section id="roadmap" class="roadmap-section"></section>
+      <section id="schedule" class="schedule-section"><div class="section-title"><div><h2>Lịch tập của tuần</h2><p>Push · Pull · Legs · Upper · Legs. T7 & CN nghỉ.</p></div><span class="quiet-tag"><span class="dot"></span><span id="schedule-dates">26/10 – 1/11</span></span></div><div id="week-days" class="week-days" aria-label="Chọn ngày tập"></div></section>
       <section id="workout" class="workout-section" aria-live="polite"></section>
       <section class="week-progress" id="week-progress"><div class="progress-label"><span class="fact-icon" data-icon="chart"></span><div><h3>Tích lũy từng buổi, tiến bộ cả tuần.</h3><p id="progress-caption">0/5 buổi đã hoàn thành · Mọi hành trình đều bắt đầu từ buổi đầu tiên.</p></div></div><div class="progress-right"><strong id="progress-number">0%</strong><div class="progress-track"><span id="progress-fill"></span></div><span id="progress-items">0/25 mục tập</span></div></section>
+      <section id="nutrition" class="nutrition-section"></section>
+      <section id="measurements" class="measurements-section"></section>
+      <section id="data-backup" class="backup-section"></section>
       <footer><a class="footer-brand" href="#overview">nhịp tập.</a><p>Được thiết kế cho nhịp sống của bạn. Cứ chậm rãi, cứ tiến lên.</p><button id="sources-button">Nguồn & lưu ý</button></footer>
     </div>
   </main>
-  <nav class="mobile-nav" aria-label="Điều hướng trên điện thoại"><a href="#schedule"><span data-icon="calendar"></span>Lịch tập</a><button id="mobile-guide"><span data-icon="book"></span>Hướng dẫn</button><button id="mobile-progress"><span data-icon="chart"></span>Tiến độ</button></nav>
+  <nav class="mobile-nav" aria-label="Điều hướng trên điện thoại"><a href="#schedule"><span data-icon="calendar"></span>Lịch tập</a><a href="#nutrition"><span data-icon="weight"></span>Ăn uống</a><button id="mobile-guide"><span data-icon="book"></span>Kỹ thuật</button><button id="mobile-progress"><span data-icon="chart"></span>Tiến độ</button></nav>
   <dialog id="detail-dialog"><div id="dialog-content"></div></dialog>
   <div id="toast" class="toast" role="status"></div>
 </body>

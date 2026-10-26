@@ -152,15 +152,19 @@ const exercises = {
     'Hít vào, hạ chậm. Giữ vai thấp và không bật người để nâng tạ.'
   ],'T5 chỉ 1 hiệp nhẹ. Nếu không có máy phù hợp, có thể bỏ bài thay vì ép cổ tay theo tay cầm.'),
 };
-const days = [
-  {short:'Thứ 2',date:19,title:'Ngực & tay sau',tag:'Push',mins:'40–50',cardio:'10–15',cardioName:'Đi bộ trên máy',cardioTip:'Khởi đầu 10 phút, mặt phẳng hoặc dốc thấp. Tốc độ đủ để vẫn nói được câu trọn vẹn.',free:['dbPress','incline','cableFly','pushdown'],machine:['chestMachine','inclineMachine','pecDeck','pushdown']},
-  {short:'Thứ 3',date:20,title:'Lưng, xô & tay trước',tag:'Pull',mins:'40–50',cardio:'10–15',cardioName:'Đạp xe tại chỗ',cardioTip:'Kháng lực nhẹ, đạp đều. Giữ vai và bàn tay thư giãn, không dồn trọng lượng lên cổ tay.',free:['pulldown','row','seatedRow','hammer'],machine:['pulldown','machineRow','reverseDeck','machineCurl']},
-  {short:'Thứ 4',date:21,title:'Chân, mông & bụng',tag:'Legs & Core',mins:'40–50',cardio:'10–15',cardioName:'Đi bộ nhẹ cuối buổi',cardioTip:'Chân vừa tập xong: đi bộ mặt phẳng nhẹ hoặc đạp xe nhẹ. Giảm thời lượng nếu chân quá mỏi.',free:['goblet','rdl','bridge','deadbug'],machine:['legPress','legCurl','hipMachine','deadbug']},
-  {short:'Thứ 5',date:22,title:'Vai & bắp tay',tag:'Shoulders & Arms',mins:'30–40',cardio:'10–20',cardioName:'Đạp xe nhịp thoải mái',cardioTip:'Bắt đầu 10 phút. Chỉ tăng thêm 5 phút nếu dễ chịu, vẫn nói chuyện được và hồi phục tốt.',free:['lateral','facePull','hammer','pushdown'],machine:['lateralMachine','reverseDeck','machineCurl','pushdown'],light:true,note:'Buổi nhẹ: chỉ 1 hiệp mỗi bài, còn dư 4–5 lần. Nếu tay hoặc vai chưa hồi phục, bỏ phần kháng lực và chỉ đi bộ nhẹ.'},
-  {short:'Thứ 6',date:23,title:'Lưng, ngực & bụng',tag:'Upper Body & Core',mins:'30–45',cardio:'10–20',cardioName:'Đi bộ khép lại tuần tập',cardioTip:'Tuần đầu ưu tiên 10–20 phút nhẹ. Mốc 20–30 phút là lựa chọn sau này khi thể lực và khả năng hồi phục đã tốt hơn.',free:['dbPress','seatedRow','pulldown','deadbug'],machine:['chestMachine','machineRow','pulldown','deadbug'],light:true,note:'Kiểm tra phục hồi sau T5: nếu vai/tay còn mỏi, nghỉ phần thân trên và chỉ cardio nhẹ. Khi hết mỏi, tập kỹ thuật 1 hiệp/bài, tải nhẹ.'},
-  {short:'Thứ 7',date:24,title:'Nghỉ & phục hồi',tag:'Rest day',rest:true},
-  {short:'Chủ nhật',date:25,title:'Nghỉ & nạp năng lượng',tag:'Rest day',rest:true}
-];
+exercises.calf=E('Nhón bắp chân tạ đơn','Standing dumbbell calf raise','calf','Bám nhẹ điểm tựa nếu cần, lên xuống chậm.',[
+ 'Đứng trên sàn phẳng, chân rộng bằng hông, cầm tạ nhẹ hoặc chỉ dùng trọng lượng cơ thể. Đứng gần điểm tựa chắc để giữ thăng bằng.',
+ 'Thở ra, nhón gót lên có kiểm soát. Giữ gối mềm, không bật nảy và không nghiêng cổ chân ra ngoài.',
+ 'Hít vào, hạ gót chậm về sàn. Bắt đầu trên sàn; không cần dùng bục như một số ảnh mẫu.'
+],'Ảnh có thể dùng bục. Tuần đầu tập trên sàn để dễ kiểm soát; nếu cầm tạ gây khó chịu, bỏ tạ.','12–15 lần');
+exercises.calfMachine=E('Nhón bắp chân với máy','Standing calf raise machine','calf','Chỉnh đệm vai, giữ gối mềm và không bật nảy.',[
+ 'Nhờ hướng dẫn khóa an toàn. Chỉnh đệm vai phù hợp, đặt chân chắc trên bàn đạp và chọn tải nhẹ.',
+ 'Thở ra, nâng gót từ từ, không khóa cứng gối hoặc đẩy bằng lưng.',
+ 'Hít vào, hạ gót có kiểm soát trong biên độ thoải mái. Không thả gót rơi hoặc kéo căng đau.'
+],'Nếu đệm vai hoặc máy không phù hợp, tập nhón gót với trọng lượng cơ thể trên sàn.','12–15 lần');
+exercises.lateral.tip='Dùng tải nhẹ để nâng chậm, không nhún vai hoặc vung thân. Không tăng tải nếu biên độ và kiểm soát giảm.';
+exercises.lateralMachine.tip='Chỉnh ghế và đệm đúng tầm vai; nếu không có máy phù hợp, dùng tạ đơn nhẹ thay thế.';
+const days=GymPlan.days;
 
 // Each exercise has its own reviewed photo sequence. Keep source frame order explicit.
 const photoOrder = {dbPress:[1,0],incline:[1,0],pecDeck:[1,0],pulldown:[1,0],legPress:[1,0]};
@@ -178,6 +182,8 @@ const photoCaptions = {
  hipMachine:['Hai chân ở gần nhau','Mở hai gối ra ngoài'],lateral:['Tạ hai bên thân','Nâng tay tối đa ngang vai'],
  facePull:['Tay duỗi về phía dây cáp','Kéo dây về gần trán'],lateralMachine:['Cánh tay đặt trên đệm','Nâng cánh tay tới ngang vai']
 };
+photoCaptions.calf=['Gót đặt xuống, người đứng vững','Nhón gót lên chậm'];
+photoCaptions.calfMachine=['Gót ở vị trí thấp thoải mái','Nâng gót bằng bắp chân'];
 const photoNotes = {
  goblet:'Ảnh minh hoạ squat tự do. Tuần đầu có thể đặt ghế chắc phía sau để chạm nhẹ, hoặc bỏ tạ khi học tư thế.',
  rdl:'Ảnh minh hoạ động tác gập hông với tạ đơn. Trong bài của bạn, giữ gối hơi chùng và chỉ hạ tới khi giữ được lưng tự nhiên.',
@@ -207,106 +213,3 @@ function bindViewer(id){
 }
 function showLargePhoto(id){modal(exercises[id].name,'Ảnh lớn · Có thể xoay ngang điện thoại để xem rõ hơn',`${viewerMarkup(id,true)}<button class="button secondary back-to-guide" id="back-to-guide">← Quay lại hướng dẫn</button>`);dialog.classList.add('photo-dialog');bindViewer(id);$('#back-to-guide').onclick=()=>showExercise(id);}
 
-const STORAGE='nhip-tap-2026-10-19-v1';
-let state={day:0,mode:'free',done:{},notes:''};
-try { const saved=JSON.parse(localStorage.getItem(STORAGE)); if(saved && typeof saved==='object') state={...state,...saved,day:Math.max(0,Math.min(6,Number(saved.day)||0)),mode:saved.mode==='machine'?'machine':'free',done:saved.done&&typeof saved.done==='object'?saved.done:{},notes:typeof saved.notes==='string'?saved.notes:''}; } catch {}
-let persistWarned=false;
-function persist(){try{localStorage.setItem(STORAGE,JSON.stringify(state));}catch{if(!persistWarned){toast('Trình duyệt không cho lưu tiến độ. Bạn vẫn có thể tập trong phiên này.');persistWarned=true;}}}
-const key=(day,item)=>`${day}-${item}`;
-const countDay=d=>Array.from({length:5},(_,i)=>state.done[key(d,i)]?1:0).reduce((a,b)=>a+b,0);
-function totalDone(){return days.slice(0,5).reduce((sum,_,i)=>sum+countDay(i),0);}
-function sessionComplete(d){return countDay(d)===5;}
-function sets(d){return d.light?'1 hiệp':'1–2 hiệp';}
-function exerciseModeLabel(){return state.mode==='free'?'Tạ đơn / dây cáp':'Máy / dây cáp';}
-let toastTimer;
-function toast(message){$('#toast').textContent=message;$('#toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('visible'),3000);}
-
-function renderDays(){
-  const previousScroll=$('#week-days').scrollLeft;
-  $('#week-days').innerHTML=days.map((d,i)=>`<button class="day-card ${state.day===i?'selected ':''}${d.rest?'rest-day':''}" data-day="${i}" aria-pressed="${state.day===i}" aria-label="${d.short}, ${d.date} tháng 10, ${d.title}"><div class="day-top"><span>${d.short}</span><span class="day-number">${d.date}</span></div><h3>${d.rest?'Nghỉ ngơi':i===1?'Lưng & tay trước':i===2?'Chân & bụng':i===4?'Thân trên':d.title}</h3><p>${d.tag}</p><div class="day-bottom">${icon(d.rest?'leaf':'clock')} ${d.rest?'Phục hồi':'Buổi tối'}</div>${i<5&&sessionComplete(i)?`<span class="day-done">${icon('check')}</span>`:''}</button>`).join('');
-  $('#week-days').scrollLeft=previousScroll;
-  $$('[data-day]').forEach(btn=>btn.addEventListener('click',()=>selectDay(Number(btn.dataset.day))));
-}
-function selectDay(day){state.day=day;persist();render();const selected=$('.day-card.selected');if(selected)selected.scrollIntoView({block:'nearest',inline:'nearest',behavior:'instant'});}
-function updateProgress(){
-  const done=totalDone();const complete=days.slice(0,5).filter((_,i)=>sessionComplete(i)).length;
-  $('#progress-number').textContent=`${Math.round(done/25*100)}%`;
-  $('#progress-fill').style.width=`${done/25*100}%`;
-  $('#progress-items').textContent=`${done}/25 mục tập`;
-  $('#progress-caption').textContent=`${complete}/5 buổi đã hoàn thành · ${complete===5?'Một tuần đều đặn. Bạn đã làm rất tốt!':done>0?'Từng bước nhỏ đang tạo nên thay đổi.':'Mọi hành trình đều bắt đầu từ buổi đầu tiên.'}`;
-}
-function render(){renderDays();renderWorkout();updateProgress();}
-function renderWorkout(){
-  const d=days[state.day];
-  if(d.rest){$('#workout').innerHTML=`<div class="rest-view"><div><span class="rest-symbol">${icon('leaf')}</span><span class="eyebrow">${d.short.toUpperCase()} · ${d.date}/10 · HỒI PHỤC</span><h2>Cho cơ thể một khoảng nghỉ.</h2><p>Hôm nay nghỉ tập có cấu trúc. Ăn đủ bữa, ngủ đủ và thư giãn. Phục hồi cũng là một phần của hành trình khỏe hơn.</p><div class="rest-tags"><span>Không tập tạ</span><span>Không cardio bắt buộc</span><span>Lắng nghe cơ thể</span></div><button class="button secondary" style="margin-top:25px" id="back-monday">${icon('calendar')} Xem lại lịch Thứ 2</button></div></div>`;$('#back-monday').onclick=()=>selectDay(0);return;}
-  const ids=d[state.mode];const done=countDay(state.day);
-  $('#workout').innerHTML=`<div class="workout-title-row"><div><span class="workout-eyebrow">BUỔI ${String(state.day+1).padStart(2,'0')} · ${d.short.toUpperCase()}, ${d.date}/10</span><h2>${d.title}</h2><p class="workout-subtitle">${icon('clock')} ${d.mins} phút <span>·</span> ${d.light?'Buổi kỹ thuật nhẹ':'Cường độ nhẹ đến vừa'} <span>·</span> ${d.tag}</p></div><div class="equipment-switch" role="group" aria-label="Chọn dụng cụ tập"><button data-mode="free" class="${state.mode==='free'?'active':''}" aria-pressed="${state.mode==='free'}">${icon('dumbbell')}Tạ đơn / Dây cáp</button><button data-mode="machine" class="${state.mode==='machine'?'active':''}" aria-pressed="${state.mode==='machine'}">${icon('machine')}Tập với máy</button></div></div>
-  <div class="workout-grid"><div class="routine-main"><div class="routine-top">${icon('spark')}<div><strong>01. Khởi động · 5–10 phút</strong><p>Đi bộ nhẹ, xoay vai nhẹ, gập duỗi cổ tay không tải. Thử 1 hiệp thật nhẹ trước bài đầu.</p></div></div>
-  ${d.note?`<div class="recovery-note">${icon('info')}<p>${d.note}</p></div>`:''}
-  <div class="routine-label">02. KHÁNG LỰC <span>4 bài · ${exerciseModeLabel()}</span></div>
-  <div class="exercise-grid">${ids.map((id,i)=>{const e=exercises[id];const isDone=!!state.done[key(state.day,i)];return `<article class="exercise-card ${isDone?'completed':''}"><button class="exercise-art photo-art" data-detail="${id}" aria-label="Xem minh hoạ và kỹ thuật ${e.name}">${photoPair(id)}<span class="exercise-index">${String(i+1).padStart(2,'0')}</span><span class="art-badge">${e.art==='deadbug'||e.art==='bridge'?'TRỌNG LƯỢNG CƠ THỂ':state.mode==='machine'?'MÁY / CÁP':'TẠ ĐƠN / CÁP'}</span><span class="photo-open">${icon('expand')} Xem ảnh lớn & kỹ thuật</span></button><div class="exercise-body"><h3>${e.name}</h3><p class="english-name">${e.en}</p><div class="exercise-meta"><strong>${sets(d)} × ${e.reps}</strong><span>·</span>Nghỉ 60–90s</div><p class="exercise-cue">${e.cue}</p><div class="exercise-actions"><button class="text-button" data-detail="${id}">Ảnh & kỹ thuật ${icon('arrow')}</button><button class="complete-button" data-complete="${i}" aria-pressed="${isDone}" aria-label="${isDone?'Bỏ đánh dấu':'Đánh dấu đã tập'} ${e.name}">${icon(isDone?'check':'circle')}${isDone?'Đã tập':'Hoàn thành'}</button></div></div></article>`;}).join('')}</div>
-  <div class="cardio-card"><div class="cardio-heading"><span class="cardio-icon">${icon('heart')}</span><div><span class="eyebrow">03. CARDIO CUỐI BUỔI</span><h3>${d.cardioName} · ${d.cardio} phút</h3><p>Thở nhanh hơn một chút, vẫn nói chuyện được.</p><button class="cardio-more" id="cardio-detail">Xem nhịp tập phù hợp →</button></div></div><button class="complete-button" data-complete="4" aria-pressed="${!!state.done[key(state.day,4)]}">${icon(state.done[key(state.day,4)]?'check':'circle')}${state.done[key(state.day,4)]?'Đã cardio':'Đã hoàn thành'}</button></div>
-  </div><aside class="training-sidebar"><section class="session-card"><div class="session-card-header"><h3>Buổi tập của bạn</h3>${icon('clock')}</div><p class="session-date">${d.short}, ${d.date} tháng 10 · Buổi tối</p><div class="session-count"><strong>${done}</strong><span>/ 5 mục đã hoàn thành</span></div><div class="session-progress"><span style="width:${done/5*100}%"></span></div><div class="session-lines"><div class="session-line"><span>Kháng lực</span><strong>${d.light?'15–20':'20–25'} phút</strong></div><div class="session-line"><span>Cardio</span><strong>${d.cardio} phút</strong></div><div class="session-line"><span>Mức gắng sức</span><strong>${d.light?'4–5':'5–6'} / 10</strong></div></div><button class="button primary" id="rest-start">${icon('clock')}Bấm giờ nghỉ · 60 giây</button><div id="timer-host"></div><p class="session-footnote">Nghỉ thêm nếu chưa thở đều.</p><label class="notes-label" for="session-note">Ghi chú của tuần</label><textarea class="notes-input" id="session-note" placeholder="Mức tạ, cảm nhận cổ tay, điều cần nhớ…" maxlength="2000"></textarea><p class="session-footnote">Tiến độ và ghi chú lưu trên trình duyệt này.</p></section>
-  <section class="wrist-note"><div class="note-heading">${icon('shield')}Chăm sóc cổ tay của bạn</div><p>Giữ cổ tay thẳng hàng cẳng tay, chọn tay cầm thoải mái. Đau nhói, tê hoặc sưng: dừng bài. Nếu kéo dài, nên được chuyên viên y tế đánh giá.</p><button class="text-button" id="wrist-guide">Xem lưu ý khi tập ${icon('arrow')}</button></section>
-  <section class="rhythm-note"><h3>Chậm một nhịp, chắc một bước.</h3><ul><li>Tuần đầu bắt đầu 1 hiệp/bài.</li><li>T2–T4 thêm hiệp 2 khi còn khỏe.</li><li>Dừng trước kiệt sức, còn dư 3–4 lần.</li><li>T5–T6 giảm tải, ưu tiên phục hồi.</li></ul></section></aside></div>`;
-  $$('[data-mode]').forEach(btn=>btn.onclick=()=>{state.mode=btn.dataset.mode;persist();renderWorkout();});
-  $$('[data-detail]').forEach(btn=>btn.onclick=()=>showExercise(btn.dataset.detail));
-  $$('[data-complete]').forEach(btn=>btn.onclick=()=>toggleDone(Number(btn.dataset.complete)));
-  $('#rest-start').onclick=startRest;
-  $('#wrist-guide').onclick=showGuide;
-  $('#cardio-detail').onclick=showCardio;
-  $('#session-note').value=state.notes;
-  $('#session-note').oninput=event=>{state.notes=event.target.value;persist();};
-  if(timerEnd || timerPaused!==null)renderTimer();
-}
-function toggleDone(item){const k=key(state.day,item);state.done[k]=!state.done[k];persist();render();if(sessionComplete(state.day))toast('Đã hoàn thành buổi tập. Hãy dành thời gian hồi phục!');}
-
-const dialog=$('#detail-dialog');
-dialog.addEventListener('close',stopPhotos);
-function modal(title,subtitle,body){
-  stopPhotos();dialog.className='';
-  const alreadyOpen=dialog.open;
-  $('#dialog-content').innerHTML=`<div class="modal-header"><div><h2 id="modal-title">${title}</h2><p>${subtitle}</p></div><button class="close-button" id="close-dialog" aria-label="Đóng cửa sổ">${icon('close')}</button></div><div class="modal-body">${body}</div>`;
-  dialog.setAttribute('aria-labelledby','modal-title');
-  $('#close-dialog').onclick=()=>dialog.close();
-  if(!alreadyOpen)dialog.showModal();
-}
-dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
-function showExercise(id){const e=exercises[id];const d=days[state.day];modal(e.name,e.en,`${viewerMarkup(id)}<div class="modal-stats"><span>${sets(d)} × ${e.reps}</span><span>Nghỉ 60–90 giây</span><span>Tải nhẹ</span></div><h3>Thực hiện từng bước</h3><ol>${e.steps.map(s=>`<li>${s}</li>`).join('')}</ol>${photoNotes[id]?`<div class="photo-variant-note">${photoNotes[id]}</div>`:''}<div class="modal-callout">${icon('shield')} ${e.tip}</div><p class="photo-reference">Ảnh giúp nhận biết động tác và dụng cụ. Tải và biên độ trong ảnh không phải mức tập bạn cần đạt. Nhờ huấn luyện viên kiểm tra kỹ thuật ở buổi đầu.</p><p class="photo-credit">${id==='lateralMachine'?'<a href="https://gymfitclub.ir/articles/showarticle/205" target="_blank" rel="noopener">Nguồn minh hoạ: GymFit</a>':'<a href="https://github.com/yuhonas/free-exercise-db" target="_blank" rel="noopener">Nguồn ảnh: Free Exercise DB</a>'}</p>`);bindViewer(id);}
-function showCardio(){const d=days[state.day];modal('Cardio vừa với sức bạn',`${d.short} · ${d.cardioName}`,`<h3>Tuần này: ${d.cardio} phút</h3><p>${d.cardioTip}</p><ol><li>Bắt đầu chậm 2–3 phút để tìm nhịp dễ chịu.</li><li>Giữ mức vẫn nói được câu trọn vẹn. Nếu không nói được vì hụt hơi, giảm tốc hoặc dừng nghỉ.</li><li>Cuối buổi giảm nhịp dần 2–3 phút, thời gian này nằm trong tổng thời lượng.</li></ol><div class="modal-callout">Không cần đạt 30 phút ngay tuần đầu. Khả năng phục hồi và cảm nhận trong buổi tập quyết định mức tăng.</div><h3>Giảm mỡ bụng là quá trình toàn thân</h3><p>Cardio hỗ trợ vận động và thể lực; bài bụng giúp cơ bụng khỏe. Không có bài tập đốt mỡ riêng một vị trí. Ăn uống phù hợp, giấc ngủ và sự đều đặn đều góp phần vào thay đổi lâu dài.</p><p style="margin-top:15px">Tham khảo: <a href="https://www.cdc.gov/physical-activity-basics/measuring/index.html" target="_blank" rel="noopener">CDC · Đo cường độ vận động</a> · <a href="https://www.acefitness.org/fitfacts/pdfs/fitfacts/itemid_80.pdf" target="_blank" rel="noopener">ACE · Giảm mỡ cục bộ</a>.</p>`);}
-function showGuide(){modal('Tập vừa sức, tập lâu dài','Hướng dẫn cho tuần làm quen',`<h3>Chọn 1 trong 2 phương án mỗi buổi</h3><p>Tạ đơn / dây cáp hoặc tập với máy là hai cách thay thế cho cùng buổi tập. Chọn phương án có dụng cụ phù hợp; bài dây cáp và bài trên thảm có thể xuất hiện ở cả hai.</p><h3>Bắt đầu với tải nhẹ</h3><p>T2–T4: làm 1 hiệp mỗi bài trước; chỉ thêm hiệp thứ 2 nếu còn khỏe và giữ được kỹ thuật. T5–T6: chỉ 1 hiệp nhẹ. Chọn mức tạ còn dư khoảng 3–4 lần, T5 dư 4–5 lần, không tập đến kiệt sức.</p><h3>Giữ cổ tay thoải mái</h3><p>Cổ tay thẳng hàng cẳng tay, không bẻ ngược hoặc cuộn vào. Ưu tiên tay cầm trung lập khi dễ chịu. Đai cổ tay không thay thế kỹ thuật và không phải cách để cố chịu đau.</p><h3>Phục hồi quyết định buổi kế tiếp</h3><p>Lịch 5 tối là khung tham khảo. Vai và tay có thể mỏi sau T5: khi đó T6 bỏ phần thân trên, đi bộ nhẹ hoặc nghỉ. Bạn có thể bỏ buổi nếu chưa hồi phục, không cần tập bù dồn.</p><h3>Khi cần dừng</h3><p>Đau nhói, tê, sưng hoặc chóng mặt: dừng tập. Đau cổ tay kéo dài cần được đánh giá. Đau ngực, choáng hoặc khó thở bất thường: dừng ngay và tìm trợ giúp y tế.</p><div class="modal-callout">Kế hoạch giả định bạn là người trưởng thành và chưa có chống chỉ định vận động. Chiều cao, cân nặng và mô tả thể lực chưa đủ để xác định bệnh lý hay mức tạ phù hợp. Nhờ huấn luyện viên kiểm tra kỹ thuật trực tiếp.</div><p style="margin-top:15px">Nguyên tắc kỹ thuật và nghỉ ngơi: <a href="https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/weight-training/art-20045842" target="_blank" rel="noopener">Mayo Clinic</a>.</p>`);}
-function showProgress(){
-  const count=totalDone();
-  modal('Tiến độ của tuần','19–25 tháng 10, 2026 · Tuần 01',`<p><strong style="font-size:32px;color:#688454">${Math.round(count/25*100)}%</strong> · ${count}/25 mục tập đã hoàn thành</p><div class="modal-progress-list">${days.slice(0,5).map((d,i)=>`<div class="modal-progress-day"><span>${d.short} · ${d.title}</span><strong>${countDay(i)}/5 ${sessionComplete(i)?'✓':''}</strong></div>`).join('')}</div><h3>Tiến độ là sự đều đặn, không phải ép sức.</h3><p>Đánh dấu khi đã thực hiện bài phù hợp với sức hôm đó. Hai phương án dụng cụ dùng chung tiến độ cho cùng nhóm động tác. Khởi động chưa được tính vào 5 mục, gồm 4 bài kháng lực và 1 phần cardio.</p><p style="margin-top:12px">Dữ liệu chỉ lưu trên trình duyệt này. Nếu xóa dữ liệu trình duyệt hoặc đổi thiết bị, tiến độ sẽ không được đồng bộ.</p>`);
-}
-function showSources(){modal('Nguồn & ghi chú kế hoạch','Nội dung tham khảo · Xem ngày 17/10/2026',`<p>Lịch được xây từ thông tin bạn cung cấp: 178 cm, 73 kg, thể lực còn yếu, cổ tay yếu, mục tiêu tăng cơ và giảm mỡ. Tuần triển khai là 19–25/10/2026 theo phần “tuần sau” trong yêu cầu.</p><h3>Nguồn tham khảo</h3><ul><li><a href="https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/weight-training/art-20045842" target="_blank" rel="noopener">Mayo Clinic · Kỹ thuật tập kháng lực</a>: khởi động, tải phù hợp, kiểm soát động tác, nghỉ và dừng khi đau.</li><li><a href="https://www.cdc.gov/physical-activity-basics/measuring/index.html" target="_blank" rel="noopener">CDC · Cường độ vận động</a>: cách dùng khả năng nói chuyện để kiểm tra cường độ.</li><li><a href="https://www.acefitness.org/fitfacts/pdfs/fitfacts/itemid_80.pdf" target="_blank" rel="noopener">ACE · Sự thật về giảm mỡ cục bộ</a>.</li></ul><h3>Giới hạn cá nhân hoá</h3><p>Phân chia buổi, số hiệp và mức gắng sức là gợi ý khởi đầu, không phải chương trình được khám và kê riêng. Lịch T5–T6 được giảm khối lượng vì có nhóm cơ trùng nhau. Khi chưa hồi phục, ưu tiên nghỉ hơn hoàn thành đủ lịch.</p><h3>Hình ảnh</h3><p>Ảnh phòng gym: <a href="https://unsplash.com/photos/a-gym-filled-with-lots-of-machines-and-weights-1RNQ11ZODJM" target="_blank" rel="noopener">Unsplash</a>. Ảnh động tác: <a href="https://github.com/yuhonas/free-exercise-db" target="_blank" rel="noopener">Free Exercise DB</a> (23 bộ, mỗi bộ 2 tư thế). Minh hoạ máy nâng vai: <a href="https://gymfitclub.ir/articles/showarticle/205" target="_blank" rel="noopener">GymFit</a>. Một số ảnh thể hiện biến thể dụng cụ; ghi chú dưới từng bài nêu điểm cần điều chỉnh. Không thay thế hướng dẫn trực tiếp.</p>`);}
-
-let timerEnd=null, timerInterval=null, timerPaused=null;
-function startRest(){timerEnd=Date.now()+60000;timerPaused=null;renderTimer();ensureTimer();}
-function ensureTimer(){if(timerInterval)clearInterval(timerInterval);timerInterval=setInterval(()=>{if(timerEnd&&Date.now()>=timerEnd){clearInterval(timerInterval);timerInterval=null;timerEnd=null;timerPaused=null;if($('#timer-host'))$('#timer-host').innerHTML='<div class="timer-panel"><div class="timer-time">00:00</div><p class="timer-caption">Đã hết giờ nghỉ. Chỉ tập tiếp khi đã sẵn sàng.</p></div>';toast('Hết 60 giây nghỉ. Tập tiếp khi bạn đã sẵn sàng.');}else if(timerEnd)renderTimer();},250);}
-function renderTimer(){
-  const host=$('#timer-host');if(!host)return;
-  const remaining=timerPaused??Math.max(0,Math.ceil((timerEnd-Date.now())/1000));
-  const display=`${String(Math.floor(remaining/60)).padStart(2,'0')}:${String(remaining%60).padStart(2,'0')}`;
-  if(!$('#timer-pause'))host.innerHTML=`<div class="timer-panel"><div class="timer-time" role="timer" aria-label="Thời gian nghỉ còn lại"></div><div class="timer-controls"><button id="timer-pause">Tạm dừng</button><button id="timer-add">+30 giây</button><button id="timer-reset">Đặt lại</button></div></div>`;
-  $('.timer-time',host).textContent=display;
-  $('#timer-pause').textContent=timerPaused===null?'Tạm dừng':'Tiếp tục';
-  $('#timer-pause').onclick=()=>{if(timerPaused===null){timerPaused=Math.max(0,Math.ceil((timerEnd-Date.now())/1000));timerEnd=null;clearInterval(timerInterval);timerInterval=null;}else{timerEnd=Date.now()+timerPaused*1000;timerPaused=null;ensureTimer();}renderTimer();};
-  $('#timer-add').onclick=()=>{if(timerPaused!==null)timerPaused+=30;else timerEnd+=30000;renderTimer();};
-  $('#timer-reset').onclick=startRest;
-}
-function printPlan(){
-  let target=$('#print-content');if(!target){target=document.createElement('div');target.id='print-content';target.className='print-content';$('.page-content').append(target);}
-  target.innerHTML=`<h1>Nhịp Tập · Lịch tập của bạn</h1><p>19–25/10/2026 · 178 cm · 73 kg · ${exerciseModeLabel()}</p><p>Khởi động 5–10 phút. T2–T4: 1 hiệp, thêm hiệp 2 nếu còn khỏe; T5–T6: 1 hiệp nhẹ. Nghỉ 60–90 giây. Không tập đến kiệt sức, dừng nếu đau. Nếu chưa hồi phục, bỏ bài hoặc nghỉ.</p>${days.map(d=>d.rest?`<div class="print-day"><h2>${d.short} · ${d.date}/10 · Nghỉ phục hồi</h2></div>`:`<div class="print-day"><h2>${d.short} · ${d.date}/10 · ${d.title}</h2>${d.note?`<p>${d.note}</p>`:''}<ul>${d[state.mode].map(id=>`<li>□ ${exercises[id].name} · ${sets(d)} × ${exercises[id].reps} · ${exercises[id].cue}</li>`).join('')}<li>□ ${d.cardioName}: ${d.cardio} phút · ${d.cardioTip}</li></ul></div>`).join('')}<p>Hai lựa chọn dụng cụ thay thế cho nhau. Minh hoạ và kỹ thuật chi tiết nằm trên trang web. Cardio hỗ trợ thể lực; không có bài tập giảm mỡ riêng vùng bụng. Nguồn: Mayo Clinic (Weight training: Do’s and don’ts), CDC (Physical Activity Intensity), ACE (Spot Reduction).</p>`;
-  window.print();
-}
-
-$('#guide-nav').onclick=showGuide;
-$('#progress-nav').onclick=showProgress;
-$('#sources-button').onclick=showSources;
-$('#mobile-guide').onclick=showGuide;
-$('#mobile-progress').onclick=showProgress;
-$('#print-plan').onclick=printPlan;
-$$('a[data-nav]').forEach(a=>a.addEventListener('click',()=>{$$('.nav-link').forEach(n=>n.classList.remove('active'));a.classList.add('active');}));
-window.addEventListener('storage',event=>{if(event.key===STORAGE){try{const saved=JSON.parse(event.newValue);if(saved?.done&&typeof saved.done==='object'){state.done=saved.done;state.notes=typeof saved.notes==='string'?saved.notes:'';render();}}catch{}}});
-render();
